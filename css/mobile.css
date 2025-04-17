@@ -1,0 +1,263 @@
+/* Base styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Rimuovere stili conflittuali della navbar generale */
+/* Questi stili stanno sovrascrivendo quelli in main.css causando problemi di visibilità */
+header {
+    /* Rimuovere gli stili di header che creano conflitti */
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+    text-align: inherit;
+}
+
+nav {
+    /* Rimuovere stili che interferiscono con .main-nav */
+    display: block;
+    flex-direction: initial;
+    align-items: initial;
+}
+
+nav a {
+    /* Rimuovere stili che interferiscono con .nav-list a */
+    color: inherit;
+    padding: inherit;
+}
+
+nav a:hover {
+    /* Rimuovere stili che interferiscono */
+    background-color: transparent;
+}
+
+.main-content {
+    padding: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+}
+
+/* Mobile styles - applied for screens under 768px */
+@media (max-width: 768px) {
+  /* Header and Navigation */
+  .header-container {
+    padding: 1rem;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+    z-index: 1001;
+    position: relative;
+  }
+  
+  .hamburger, 
+  .hamburger::before, 
+  .hamburger::after {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-color);
+    position: relative;
+    transition: var(--transition);
+  }
+  
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+  
+  .hamburger::before {
+    top: -8px;
+  }
+  
+  .hamburger::after {
+    bottom: -8px;
+  }
+  
+  .main-nav .nav-list {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--white);
+    flex-direction: column;
+    padding: 5rem 2rem;
+    z-index: 1000;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+  }
+  
+  .main-nav.active .nav-list {
+    right: 0;
+  }
+  
+  .main-nav.active .hamburger {
+    background-color: transparent;
+  }
+  
+  .main-nav.active .hamburger::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+  
+  .main-nav.active .hamburger::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+  }
+  
+  /* Hero Section */
+  .hero {
+    padding: 4rem 0;
+  }
+  
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  /* General Sections */
+  .features,
+  .services-preview,
+  .testimonials {
+    padding: 3rem 0;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Grids */
+  .features-grid,
+  .services-grid,
+  .testimonials-slider,
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  /* Feature Cards */
+  .feature-card {
+    padding: 1.5rem;
+  }
+  
+  /* Service Cards */
+  .service-card img {
+    height: 180px;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 3rem 0 1.5rem;
+  }
+  
+  .footer-column {
+    text-align: center;
+  }
+  
+  .footer-column h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+
+  /* Mobile styles for new About Page */
+  .about-grid.reversed {
+    direction: ltr;
+  }
+  
+  .value-card {
+    padding: 1.5rem;
+  }
+  
+  .cta-box {
+    padding: 2rem 1rem;
+  }
+  
+  .section-padding {
+    padding: 3rem 0;
+  }
+  
+  /* Aggiungere spazio tra le sezioni in mobile */
+  .about-grid {
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-grid .about-image {
+    margin-top: 1.5rem;
+  }
+  
+  .values-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  /* Migliorare spaziatura in mobile */
+  .about-grid .about-text,
+  .about-grid.reversed .about-text {
+    padding: 1.5rem;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjustments for very small screens */
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .cta-button {
+    width: 100%;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+  
+  .stat-item {
+    padding: 1.5rem;
+  }
+  
+  .value-icon {
+    font-size: 2rem;
+  }
+}

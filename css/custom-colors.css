@@ -1,0 +1,101 @@
+/* Elementi con accento rosso */
+
+/* Pulsanti secondari */
+.cta-button.secondary:hover {
+  background-color: var(--white);
+  color: var(--accent-color); /* Rosso */
+}
+
+/* Hover sulla card servizi */
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(230, 0, 0, 0.1); /* Ombra rossa */
+}
+
+/* Badge "Nuovo" per servizi speciali */
+.special-badge {
+  background-color: var(--accent-color); /* Rosso */
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  position: relative;
+  display: inline-block;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* Quando il badge è usato nella lista di servizi */
+.service-card .special-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  margin-left: 0;
+}
+
+/* Elementi con enfasi */
+.highlight {
+  color: var(--accent-color); /* Rosso */
+  font-weight: 600;
+}
+
+/* Bordo rosso per elementi selezionati o attivi in forme specifiche */
+input:focus, textarea:focus, select:focus {
+  border-color: var(--accent-color); /* Rosso */
+  box-shadow: 0 0 0 2px rgba(230, 0, 0, 0.1);
+}
+
+/* Pulsante alternativo rosso */
+.cta-button.danger {
+  background-color: var(--accent-color); /* Rosso */
+  color: var(--white);
+}
+
+.cta-button.danger:hover {
+  background-color: #cc0000; /* Rosso più scuro */
+}
+
+/* Testo di avviso */
+.alert {
+  color: var(--accent-color); /* Rosso */
+  font-weight: 500;
+}
+
+/* Bordo alternativo per service-item */
+.service-item:hover {
+  border-left: 3px solid var(--accent-color); /* Rosso al passaggio del mouse */
+}
+
+/* Stili aggiuntivi per elementi speciali */
+.feature-card:nth-child(2) .feature-icon {
+  color: var(--accent-color); /* L'icona del secondo feature-card sarà rossa */
+}
+
+/* Btn outline nero */
+.cta-button.outline {
+  background-color: transparent;
+  border: 2px solid var(--black);
+  color: var(--black);
+}
+
+.cta-button.outline:hover {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+/* Bottone speciale */
+.btn-special {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  color: var(--white);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.btn-special:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
