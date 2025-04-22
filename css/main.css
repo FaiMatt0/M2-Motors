@@ -340,6 +340,7 @@ footer {
   margin-bottom: 1.5rem;
   position: relative;
   padding-bottom: 10px;
+  text-align: center;
 }
 
 .footer-column h4::after {
@@ -349,7 +350,8 @@ footer {
   height: 2px;
   background-color: var(--primary-color); /* Arancione */
   bottom: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .footer-column address {
@@ -359,6 +361,7 @@ footer {
 .social-links {
   display: flex;
   gap: 1rem;
+  justify-content: center; /* Centers items horizontally */
 }
 
 .social-links a {
@@ -805,4 +808,81 @@ footer {
   margin-bottom: 1.8rem;
   position: relative;
   padding-bottom: 12px;
+}
+
+/* Work In Progress Page */
+.work-in-progress {
+  padding: 5rem 0;
+  background-color: var(--light-gray);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.work-in-progress h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+.wip-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  background-color: var(--white);
+  padding: 3rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.wip-image {
+  width: 40%;
+  max-width: 400px;
+  height: auto;
+}
+
+.wip-text {
+  flex: 1;
+}
+
+.wip-text h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.wip-text p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  margin-top: 1.5rem;
+}
+
+.primary-btn {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.primary-btn:hover {
+  background-color: #e63e00;
+}
+
+@media (max-width: 768px) {
+  .wip-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .wip-image {
+    width: 70%;
+    margin-bottom: 1.5rem;
+  }
 }
