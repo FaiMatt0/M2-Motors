@@ -83,6 +83,14 @@ header {
   z-index: 1000;
 }
 
+@media (min-width: 768px) {
+  header {
+    background-image: url('../images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+}
+
 .header-container {
   display: flex;
   justify-content: space-between;
