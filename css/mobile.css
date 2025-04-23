@@ -531,6 +531,38 @@
     box-sizing: border-box;
     overflow-x: hidden;
   }
+
+  /* Adding container fixes to prevent white space covering cards */
+  div.container {
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 15px;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+  
+  /* Fix for service cards display */
+  .services-preview .container {
+    padding: 0 15px;
+  }
+  
+  /* Fix for card containers to prevent cutting and overflow */
+  .feature-card, 
+  .service-card,
+  .testimonial-card {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: visible;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Ensure service grid has proper spacing */
+  .services-grid {
+    margin: 0 0 2rem 0;
+    width: 100%;
+  }
 }
 
 /* Even smaller screens */
@@ -608,7 +640,7 @@
   }
   
   .value-title {
-    font-size: 1rem;
+    font-size: 1rem
   }
   
   .value-description {
