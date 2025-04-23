@@ -211,7 +211,7 @@ header {
 
 .logo-bg-wrapper > section {
   position: relative;
-  z-index: 1;
+  z-index: 10;
 }
 
 /* Hero section with dark overlay */
