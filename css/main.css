@@ -369,6 +369,15 @@ header {
   margin-bottom: 1.5rem;
 }
 
+/* Add styling for feature GIFs */
+.feature-gif {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
 /* Services Preview */
 .services-preview {
   background-color: var(--light-gray);
