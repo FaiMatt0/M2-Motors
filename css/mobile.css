@@ -1,84 +1,66 @@
-/* Base styles */
-body {
+/* Mobile styles - only applied for screens under 768px */
+@media (max-width: 767px) {
+  /* Base styles */
+  body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+  }
 
-/* Rimuovere stili conflittuali della navbar generale */
-/* Questi stili stanno sovrascrivendo quelli in main.css causando problemi di visibilità */
-header {
-    /* Rimuovere gli stili di header che creano conflitti */
+  /* Mobile-specific header styles */
+  header {
     background-color: transparent;
     color: inherit;
     padding: 0;
     text-align: inherit;
-    background-image: url('../images/banner-logo.jpg');
-    background-size: 100% auto; /* Width 100%, height auto to maintain aspect ratio */
-    background-position: center;
-    background-repeat: no-repeat;
-    height: auto; /* Let height be determined by the image aspect ratio */
-    min-height: 80px; /* Reduced from 100px to make header smaller */
-    width: 100%; /* Ensure full width */
-    display: flex;
-    align-items: center;
-}
-
-/* Ensure header container takes full width */
-.header-container {
+    height: auto;
+    min-height: 80px;
     width: 100%;
     display: flex;
-    justify-content: flex-end; /* Position nav to the right since logo is hidden */
-    padding-top: calc(100% * 0.25); /* Reduced from 0.33 to make header smaller */
-}
+    align-items: center;
+    background-image: url('../images/banner-logo.jpg');
+    background-size: cover; /* Changed from contain to cover */
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative; /* Added position for better control */
+    overflow: hidden; /* Ensures no overflow */
+  }
 
-nav {
-    /* Rimuovere stili che interferiscono con .main-nav */
+  /* Ensure header container takes full width */
+  .header-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  nav {
+    /* Mobile-specific nav styles */
     display: block;
     flex-direction: initial;
     align-items: initial;
-}
+  }
 
-nav a {
-    /* Rimuovere stili che interferiscono con .nav-list a */
+  nav a {
     color: inherit;
     padding: inherit;
-}
+  }
 
-nav a:hover {
-    /* Rimuovere stili che interferiscono */
+  nav a:hover {
     background-color: transparent;
-}
+  }
 
-.main-content {
+  .main-content {
     padding: 15px;
-}
+  }
 
-footer {
+  footer {
     text-align: center;
     padding: 10px 0;
     background-color: #333;
     color: #fff;
-}
-
-@media (max-width: 600px) {
-    nav {
-        flex-direction: column;
-    }
-
-    .main-content {
-        padding: 10px;
-    }
-}
-
-/* Mobile styles - applied for screens under 768px */
-@media (max-width: 768px) {
-  /* Header and Navigation */
-  .header-container {
-    padding: 1rem;
-    width: 100%;
   }
 
+  /* Specific mobile styles */
   .logo img {
     height: 40px;
   }
@@ -292,15 +274,120 @@ footer {
     margin-right: 10px;
     font-size: 1.2rem;
   }
-}
 
-/* Hide the logo on mobile devices */
-@media (max-width: 767px) {
+  /* Improved styles for "I nostri valori" section in Chi siamo page */
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .value-card {
+    padding: 1.2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .value-icon {
+    margin-bottom: 12px;
+    font-size: 2.2rem;
+  }
+  
+  .value-title {
+    font-size: 1.1rem;
+    margin: 0 0 8px 0;
+  }
+  
+  .value-description {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  /* Fixed image handling for Chi siamo page */
+  .about-image {
+    max-width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  
+  .about-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .about-grid .about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+  }
+  
+  /* Improved image handling for all sections */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* About page images */
+  .about-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  /* Service page images */
+  .service-card img,
+  .service-detail-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  /* Team member images */
+  .team-member-image img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  /* Gallery images */
+  .gallery-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  /* Hide the desktop logo on mobile devices */
   .desktop-only-logo {
     display: none;
   }
 }
 
+/* Even smaller screens */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+
+  .main-content {
+    padding: 10px;
+  }
+}
+
+/* Additional styles for smallest screens */
 @media (max-width: 480px) {
   /* Further adjustments for very small screens */
   .hero h1 {
@@ -351,5 +438,37 @@ footer {
 
   .contact-cta {
     padding: 2rem 1rem;
+  }
+
+  /* Value cards adjustments for smallest screens */
+  .value-card {
+    padding: 1rem;
+  }
+  
+  .value-icon {
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+  
+  .value-title {
+    font-size: 1rem;
+  }
+  
+  .value-description {
+    font-size: 0.85rem;
+  }
+
+  /* Smaller images for very small screens */
+  .service-card img,
+  .service-detail-image img {
+    height: 160px;
+  }
+  
+  .team-member-image img {
+    max-height: 200px;
+  }
+  
+  .gallery-image img {
+    height: 140px;
   }
 }
