@@ -142,28 +142,155 @@ header {
   cursor: pointer;
 }
 
+/* Mobile Menu Hamburger */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Logo Background */
+.logo-bg {
+  position: relative;
+  background-image: url('../images/logo.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed; /* Keep the background image fixed when scrolling */
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 0; /* Remove padding to let child sections control their own padding */
+  margin: 0 auto; /* Reduce margin */
+  width: 100%;
+}
+
+.logo-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.04);
+  z-index: 0;
+}
+
+.logo-bg > * {
+  position: relative;
+  z-index: 1; /* Ensure all children are above the overlay */
+}
+
+/* Logo background wrapper for multiple sections */
+.logo-bg-wrapper {
+  background-image: url('../images/logo.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed; /* Keep the background image fixed when scrolling */
+  position: relative;
+}
+
+.logo-bg-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.04);
+  z-index: 0;
+}
+
+.logo-bg-wrapper > section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero section with dark overlay */
+.logo-bg-wrapper .hero {
+  position: relative;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.logo-bg-wrapper .hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for the hero section */
+  z-index: 0;
+}
+
+.logo-bg-wrapper .hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.logo-bg-wrapper .hero-content {
+  color: #ffffff;
+}
+
+/* Features section with light overlay */
+.logo-bg-wrapper .features {
+  position: relative;
+  padding: 5rem 0;
+}
+
+.logo-bg-wrapper .features::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.85); /* Light overlay for features */
+  z-index: 0;
+}
+
+.logo-bg-wrapper .features .container {
+  position: relative;
+  z-index: 1;
+}
+
 /* Hero Section */
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/placeholders/hero-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  color: var(--white);
+  padding: 80px 0;
   text-align: center;
-  padding: 6rem 0;
+  position: relative;
+}
+
+/* Remove hero-bg background */
+.hero-bg {
+  position: relative;
+}
+
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 0;
 }
 
 .hero-content {
-  max-width: 800px;
-  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: 2rem;
 }
 
@@ -171,7 +298,6 @@ header {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  flex-wrap: wrap;
 }
 
 /* Buttons */
@@ -208,7 +334,6 @@ header {
 /* Features Section */
 .features {
   padding: 5rem 0;
-  background-color: var(--white);
 }
 
 .features-grid {
@@ -223,6 +348,7 @@ header {
   border-radius: var(--radius);
   transition: var(--transition);
   box-shadow: var(--shadow);
+  background-color: var(--white); /* Adding white background */
 }
 
 .feature-card:hover {
