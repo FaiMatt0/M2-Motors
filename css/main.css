@@ -502,31 +502,29 @@ footer {
 }
 
 .phone-number {
-  color: var(--white) !important;
-  text-decoration: none !important;
-  -webkit-text-decoration: none !important;
-  -webkit-text-fill-color: var(--white) !important;
-  pointer-events: none; /* Prevent iOS from detecting it as a phone number */
-  user-select: text; /* Ensure text can still be selected */
+  color: var(--white);
+  /* Override iOS styling */
+  -webkit-text-fill-color: var(--white); /* Forces text color on iOS */
+  text-decoration: none !important; /* Removes underline */
+  pointer-events: auto; /* Allow clicking */
+  cursor: text; /* Shows text cursor instead of link cursor */
+  user-select: text; /* Makes the text selectable */
   -webkit-user-select: text;
-  -webkit-tap-highlight-color: transparent;
-  /* Ensure the phone links are formatted correctly */
-  font-style: normal;
+  -webkit-tap-highlight-color: transparent; /* Removes tap highlight */
 }
 
-/* Target specifically anchor elements with phone-number class */
-a[href^="tel:"].phone-number {
-  color: var(--white) !important;
+/* Additional rule to ensure parent <a> doesn't override our styling */
+a.phone-number {
   text-decoration: none !important;
+  color: inherit;
+  -webkit-text-fill-color: inherit;
 }
 
-/* For specificity with mobile formats */
-@supports (-webkit-touch-callout: none) {
-  .phone-number {
-    color: var(--white) !important;
-    -webkit-text-fill-color: var(--white) !important;
-    text-decoration: none !important;
-  }
+/* Prevent iOS from overriding our styles */
+a[href^="tel"] {
+  color: inherit !important;
+  text-decoration: none !important;
+  -webkit-text-fill-color: inherit !important;
 }
 
 .social-links {
