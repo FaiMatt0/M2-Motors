@@ -501,6 +501,10 @@ footer {
   font-style: normal;
 }
 
+.phone-number {
+  color: var(--white);
+}
+
 .social-links {
   display: flex;
   gap: 1rem;
