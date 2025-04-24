@@ -317,6 +317,7 @@ header {
   text-decoration: none;
   transition: var(--transition);
   text-align: center;
+  width: 25vh; /* Fixed width for consistent button sizing */
 }
 
 .cta-button.primary {
@@ -329,14 +330,12 @@ header {
 }
 
 .cta-button.secondary {
-  background-color: transparent;
-  color: var(--white);
-  border: 2px solid var(--white);
+  background-color: var(--white); /* Arancione */
+  color: #e63e00;
 }
 
 .cta-button.secondary:hover {
-  background-color: var(--white);
-  color: var(--secondary-color);
+  background-color: whitesmoke;
 }
 
 /* Features Section */

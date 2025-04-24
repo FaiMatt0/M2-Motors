@@ -595,6 +595,11 @@
     background-size: contain;
     opacity: 1; /* Increased from 0.04 to make it more visible */
   }
+
+  main, footer, section {
+    position: relative;
+    z-index: 1;
+  }
   
   /* Remove the original background approach for mobile */
   .logo-bg-wrapper {
