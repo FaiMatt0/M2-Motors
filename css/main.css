@@ -503,28 +503,17 @@ footer {
 
 .phone-number {
   color: var(--white);
-  /* Override iOS styling */
-  -webkit-text-fill-color: var(--white); /* Forces text color on iOS */
-  text-decoration: none !important; /* Removes underline */
-  pointer-events: auto; /* Allow clicking */
-  cursor: text; /* Shows text cursor instead of link cursor */
-  user-select: text; /* Makes the text selectable */
-  -webkit-user-select: text;
-  -webkit-tap-highlight-color: transparent; /* Removes tap highlight */
-}
-
-/* Additional rule to ensure parent <a> doesn't override our styling */
-a.phone-number {
+  
+  /* Prevent iOS detection and styling */
+  -webkit-text-fill-color: var(--white) !important;
   text-decoration: none !important;
-  color: inherit;
-  -webkit-text-fill-color: inherit;
-}
-
-/* Prevent iOS from overriding our styles */
-a[href^="tel"] {
-  color: inherit !important;
-  text-decoration: none !important;
-  -webkit-text-fill-color: inherit !important;
+  -webkit-touch-callout: none; /* Disables iOS callout */
+  pointer-events: none; /* Prevents iOS from making it clickable */
+  
+  /* Make it look like normal text */
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 .social-links {
