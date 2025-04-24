@@ -565,103 +565,6 @@
   }
 }
 
-/* Even smaller screens */
-@media (max-width: 600px) {
-  nav {
-    flex-direction: column;
-  }
-
-  .main-content {
-    padding: 10px;
-  }
-}
-
-/* Additional styles for smallest screens */
-@media (max-width: 480px) {
-  /* Further adjustments for very small screens */
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-  
-  .hero-buttons {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-  
-  .cta-button {
-    width: 100%;
-  }
-
-  .stat-number {
-    font-size: 2.5rem;
-  }
-  
-  .stat-item {
-    padding: 1.5rem;
-  }
-  
-  .value-icon {
-    font-size: 2rem;
-  }
-
-  /* Further adjustments for very small screens */
-  .contact-hero {
-    padding: 3rem 1rem;
-  }
-
-  .contact-hero h1 {
-    font-size: 1.8rem;
-  }
-
-  .contact-form {
-    padding: 1.5rem;
-  }
-
-  .contact-map {
-    height: 200px;
-  }
-
-  .contact-cta {
-    padding: 2rem 1rem;
-  }
-
-  /* Value cards adjustments for smallest screens */
-  .value-card {
-    padding: 1rem;
-  }
-  
-  .value-icon {
-    font-size: 2rem;
-    margin-bottom: 8px;
-  }
-  
-  .value-title {
-    font-size: 1rem
-  }
-  
-  .value-description {
-    font-size: 0.85rem;
-  }
-
-  /* Smaller images for very small screens */
-  .service-card img,
-  .service-detail-image img {
-    height: 160px;
-  }
-  
-  .team-member-image img {
-    max-height: 200px;
-  }
-  
-  .gallery-image img {
-    height: 140px;
-  }
-}
-
 .fixed-logo-container {
   display: none; /* Hidden by default on desktop */
 }
@@ -684,13 +587,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%; /* Adjust size as needed */
-    height: 80%; /* Adjust size as needed */
+    width: 90%; /* Slightly larger */
+    height: 90%; /* Slightly larger */
     background-image: url('../images/logo.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    opacity: 0.04; /* Very subtle watermark effect - adjust as needed */
+    opacity: 1; /* Increased from 0.04 to make it more visible */
   }
   
   /* Make sure all content is positioned above the fixed logo */
