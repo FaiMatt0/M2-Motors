@@ -19,18 +19,19 @@
     display: flex;
     align-items: center;
     background-image: url('../images/banner-logo.jpg');
-    background-size: cover; /* Changed from contain to cover */
+    background-size: contain; /* Modificato da 'cover' a 'contain' */
     background-position: center;
     background-repeat: no-repeat;
-    position: relative; /* Added position for better control */
-    overflow: hidden; /* Ensures no overflow */
+    position: relative;
+    overflow: hidden;
   }
-
-  /* Ensure header container takes full width */
+  
+  /* Opzionalmente, per assicurarsi che l'header abbia un altezza appropriata */
   .header-container {
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    padding: 10px 15px; /* Aggiunto padding per dare più spazio */
   }
 
   nav {
