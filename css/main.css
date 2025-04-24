@@ -502,16 +502,31 @@ footer {
 }
 
 .phone-number {
-  color: var(--white);
-  text-decoration: none !important;
-  -webkit-text-decoration: none;
-  -webkit-text-fill-color: var(--white);
-  pointer-events: auto;
-}
-
-a.phone-number {
   color: var(--white) !important;
   text-decoration: none !important;
+  -webkit-text-decoration: none !important;
+  -webkit-text-fill-color: var(--white) !important;
+  pointer-events: none; /* Prevent iOS from detecting it as a phone number */
+  user-select: text; /* Ensure text can still be selected */
+  -webkit-user-select: text;
+  -webkit-tap-highlight-color: transparent;
+  /* Ensure the phone links are formatted correctly */
+  font-style: normal;
+}
+
+/* Target specifically anchor elements with phone-number class */
+a[href^="tel:"].phone-number {
+  color: var(--white) !important;
+  text-decoration: none !important;
+}
+
+/* For specificity with mobile formats */
+@supports (-webkit-touch-callout: none) {
+  .phone-number {
+    color: var(--white) !important;
+    -webkit-text-fill-color: var(--white) !important;
+    text-decoration: none !important;
+  }
 }
 
 .social-links {
