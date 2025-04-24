@@ -320,6 +320,15 @@ header {
   width: 25vh; /* Fixed width for consistent button sizing */
 }
 
+/* Service icons styling */
+.service-icon {
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+  margin-right: 1rem;
+  border-radius: 6px;
+}
+
 .cta-button.primary {
   background-color: var(--primary-color); /* Arancione */
   color: var(--white);
