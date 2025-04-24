@@ -665,8 +665,5 @@
 @media (max-width: 767px) {
   .logo-bg-wrapper {
     background-image: url('../images/logo.jpg') !important;
-    background-attachment: scroll !important; /* Force scroll instead of fixed */
-    background-size: contain;
-    background-position: center;
   }
 }
