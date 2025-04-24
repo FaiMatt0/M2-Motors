@@ -503,6 +503,15 @@ footer {
 
 .phone-number {
   color: var(--white);
+  text-decoration: none !important;
+  -webkit-text-decoration: none;
+  -webkit-text-fill-color: var(--white);
+  pointer-events: auto;
+}
+
+a.phone-number {
+  color: var(--white) !important;
+  text-decoration: none !important;
 }
 
 .social-links {
