@@ -75,4 +75,70 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    
+    // Gallery lightbox functionality
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    if (galleryItems.length > 0) {
+        galleryItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const img = this.querySelector('img');
+                const overlay = this.querySelector('.gallery-overlay');
+                
+                // Create lightbox
+                const lightbox = document.createElement('div');
+                lightbox.className = 'lightbox';
+                lightbox.innerHTML = `
+                    <div class="lightbox-content">
+                        <img src="${img.src}" alt="${img.alt}">
+                        <div class="lightbox-info">
+                            <h3>${overlay.querySelector('h4').textContent}</h3>
+                            <p>${overlay.querySelector('p').textContent}</p>
+                        </div>
+                        <button class="lightbox-close">&times;</button>
+                    </div>
+                `;
+                
+                document.body.appendChild(lightbox);
+                document.body.classList.add('no-scroll');
+                
+                // Close lightbox
+                const closeBtn = lightbox.querySelector('.lightbox-close');
+                closeBtn.addEventListener('click', () => {
+                    document.body.removeChild(lightbox);
+                    document.body.classList.remove('no-scroll');
+                });
+                
+                // Close on background click
+                lightbox.addEventListener('click', (e) => {
+                    if (e.target === lightbox) {
+                        document.body.removeChild(lightbox);
+                        document.body.classList.remove('no-scroll');
+                    }
+                });
+            });
+        });
+    }
+    
+    // Oil brands animation on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    // Observe oil brands and partners
+    document.querySelectorAll('.oil-brand, .partner-card').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
 });

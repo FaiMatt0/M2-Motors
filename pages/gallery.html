@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galleria foto dell'officina M2 Motors - Scopri i nostri spazi di lavoro e le attrezzature professionali">
+    <meta name="keywords" content="officina, galleria foto, M2 Motors, attrezzature, spazi lavoro">
+    <title>Galleria - M2 Motors</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+    <link rel="stylesheet" href="../css/custom-colors.css">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="fixed-logo-container">
+        <div class="fixed-logo"></div>
+    </div>
+    
+    <header>
+        <div class="container header-container">
+            <div class="logo desktop-only-logo">
+                <a href="../index.html">
+                    <img src="../images/logo.jpg" alt="Logo M2 Motors">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle" aria-label="Apri menu">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">Chi Siamo</a></li>
+                    <li><a href="services.html">Servizi</a></li>
+                    <li><a href="gallery.html" class="active">Galleria</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>La Nostra Officina</h1>
+                <p>Scopri gli spazi professionali dove lavoriamo sui tuoi veicoli</p>
+            </div>
+        </section>
+
+        <!-- Versione Desktop: Galleria con griglia, overlay e filtri -->
+        <section class="container gallery-desktop">
+            <h2 class="section-title">La Nostra Officina</h2>
+            <p class="gallery-intro">Scopri gli spazi professionali dove lavoriamo sui tuoi veicoli con attrezzature moderne e all'avanguardia</p>
+            
+            <!-- Filtri categoria -->
+            <div class="gallery-filters">
+                <button class="category-btn active" data-category="all">Tutto</button>
+                <button class="category-btn" data-category="workspace">Spazi</button>
+                <button class="category-btn" data-category="equipment">Attrezzature</button>
+                <button class="category-btn" data-category="diagnostic">Diagnostica</button>
+            </div>
+            
+            <!-- Griglia galleria -->
+            <div class="gallery-grid">
+                <div class="gallery-item-full" data-category="workspace">
+                    <img src="../images/officina.jpg" alt="Interno officina">
+                    <div class="gallery-overlay-full">
+                        <h3>Area Principale</h3>
+                        <p>Spazio moderno e organizzato per tutti i lavori di manutenzione</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item-full" data-category="equipment">
+                    <img src="../images/service-maintenance.jpg" alt="Strumenti professionali">
+                    <div class="gallery-overlay-full">
+                        <h3>Strumenti Professionali</h3>
+                        <p>Attrezzature all'avanguardia per ogni tipo di intervento</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item-full" data-category="diagnostic">
+                    <img src="../images/service-diagnostic.jpg" alt="Area diagnostica">
+                    <div class="gallery-overlay-full">
+                        <h3>Centro Diagnostico</h3>
+                        <p>Sistemi computerizzati per diagnosi precise e veloci</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item-full" data-category="workspace">
+                    <img src="../images/service-repair.jpg" alt="Area riparazioni">
+                    <div class="gallery-overlay-full">
+                        <h3>Area Riparazioni</h3>
+                        <p>Spazio dedicato alle riparazioni più complesse</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item-full" data-category="equipment">
+                    <img src="../images/officina.png" alt="Attrezzature specializzate">
+                    <div class="gallery-overlay-full">
+                        <h3>Attrezzature Specializzate</h3>
+                        <p>Strumenti specifici per ogni marca e modello</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item-full" data-category="equipment">
+                    <img src="../images/gear.gif" alt="Meccanica di precisione">
+                    <div class="gallery-overlay-full">
+                        <h3>Meccanica di Precisione</h3>
+                        <p>Area dedicata alla lavorazione di componenti meccanici</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Versione Mobile: Griglia 2x con lightbox -->
+        <section class="container gallery-mobile">
+            <h2 class="section-title">Le Nostre Aree di Lavoro</h2>
+            <div class="gallery-content">
+                <p>Scopri gli spazi professionali dove lavoriamo sui tuoi veicoli con attrezzature moderne e all'avanguardia:</p>
+                
+                <div class="gallery-grid-mobile">
+                    <div class="gallery-item-mobile" data-title="Area Principale" data-description="Spazio moderno e organizzato per tutti i lavori di manutenzione, con un ambiente professionale e accogliente.">
+                        <img src="../images/officina.jpg" alt="Interno officina" class="gallery-image-mobile">
+                    </div>
+                    
+                    <div class="gallery-item-mobile" data-title="Strumenti Professionali" data-description="Attrezzature all'avanguardia per ogni tipo di intervento, garantendo precisione e qualità in ogni lavoro.">
+                        <img src="../images/service-maintenance.jpg" alt="Strumenti professionali" class="gallery-image-mobile">
+                    </div>
+                    
+                    <div class="gallery-item-mobile" data-title="Centro Diagnostico" data-description="Sistemi computerizzati per diagnosi precise e veloci, permettendo di identificare rapidamente ogni problema.">
+                        <img src="../images/service-diagnostic.jpg" alt="Area diagnostica" class="gallery-image-mobile">
+                    </div>
+                    
+                    <div class="gallery-item-mobile" data-title="Area Riparazioni" data-description="Spazio dedicato alle riparazioni più complesse con postazioni specializzate per ogni tipo di intervento.">
+                        <img src="../images/service-repair.jpg" alt="Area riparazioni" class="gallery-image-mobile">
+                    </div>
+                    
+                    <div class="gallery-item-mobile" data-title="Attrezzature Specializzate" data-description="Strumenti specifici per ogni marca e modello, garantendo compatibilità e prestazioni ottimali.">
+                        <img src="../images/officina.png" alt="Attrezzature specializzate" class="gallery-image-mobile">
+                    </div>
+                    
+                    <div class="gallery-item-mobile" data-title="Meccanica di Precisione" data-description="Area dedicata alla lavorazione di componenti meccanici con strumenti di precisione per la massima qualità.">
+                        <img src="../images/gear.gif" alt="Meccanica di precisione" class="gallery-image-mobile">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Vieni a Trovarci</h2>
+                <p>Scopri di persona la qualità del nostro ambiente di lavoro</p>
+                <a href="contact.html" class="cta-button primary">Prenota un Appuntamento</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>M2 Motors</h4>
+                    <p>Il tuo partner di fiducia per riparazione e manutenzione automobilistica di Mattia Milan dal 2010.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Contatti</h4>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt"></i> Via Villotta 17, 33083 Villotta di Chions (PN)</p>
+                        <p><i class="fas fa-phone"></i> <span class="phone-number" aria-label="phone number">0434 630752</span></p>
+                        <p><i class="fas fa-envelope"></i> info@m2motors.it</p>
+                    </address>
+                </div>
+                <div class="footer-column">
+                    <h4>Orari</h4>
+                    <p>Lunedì-Venerdì: 8:30 - 12:30, 14:00 - 18:00</p>
+                    <p>Sabato: 8:30 - 12:30</p>
+                    <p>Domenica: Chiuso</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Seguici</h4>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/m2motors_mattia" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/393471234567" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="wpg.html" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 M2 Motors di Mattia Milan - Villotta di Chions (PN). Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/gallery.js"></script>
+</body>
+</html>
