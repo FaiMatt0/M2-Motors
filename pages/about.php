@@ -1,41 +1,15 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Scopri M2 Motors - la nostra storia, il nostro team e il nostro impegno per un servizio automobilistico di qualità">
-    <meta name="keywords" content="meccanico auto, storia officina, team M2 Motors, esperti automobilistici">
-    <title>Chi Siamo - M2 Motors</title>
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/mobile.css">
-    <link rel="stylesheet" href="../css/custom-colors.css">
-    <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <header>
-        <div class="container header-container">
-            <div class="logo desktop-only-logo">
-                <a href="../index.html">
-                    <img src="../images/logo.jpg" alt="Logo M2 Motors">
-                </a>
-            </div>
-            <nav class="main-nav">
-                <button class="mobile-menu-toggle" aria-label="Apri menu">
-                    <span class="hamburger"></span>
-                </button>
-                <ul class="nav-list">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="about.html" class="active">Chi Siamo</a></li>
-                    <li><a href="services.html">Servizi</a></li>
-                    <li><a href="gallery.html">Galleria</a></li>
-                    <li><a href="contact.html">Contatti</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    
+<?php
+// Configurazione pagina
+$current_page = 'about';
+$base_path = '../';
+$page_title = 'Chi Siamo - M2 Motors';
+$page_description = 'Scopri M2 Motors - la nostra storia, il nostro team e il nostro impegno per un servizio automobilistico di qualità';
+$page_keywords = 'meccanico auto, storia officina, team M2 Motors, esperti automobilistici';
+
+// Includi header
+include '../includes/header.php';
+?>
+
     <main>
         <section class="page-header">
             <div class="container">
@@ -48,28 +22,30 @@
         <section class="container section-padding">
             <h2 class="section-title">La Nostra Storia</h2>
             <div class="about-grid">
+                <div class="about-image">
+                    <img src="../images/officina.jpg" alt="Esterno dell'officina M2 Motors" class="rounded-image">
+                </div>
                 <div class="about-text">
                     <p>M2 Motors di Mattia Milan è un'officina meccanica specializzata che offre servizi di alta qualità per riparazioni e manutenzioni di tutti i tipi di veicoli a Villotta di Chions. Il nostro team di meccanici esperti si impegna a garantire che il tuo veicolo funzioni in modo sicuro ed efficiente.</p>
                     <p>Fondata nel 2010 con la passione per le automobili e la meccanica di precisione, la nostra officina è cresciuta fino a diventare un punto di riferimento per gli automobilisti della zona.</p>
                     <p>Nel corso degli anni abbiamo ampliato i nostri servizi introducendo sistemi di diagnostica computerizzata avanzati, rinnovato i nostri spazi e costantemente aggiornato le nostre attrezzature per offrire il miglior servizio possibile ai nostri clienti.</p>
                 </div>
-                <div class="about-image">
-                    <img src="../images/officina.jpg" alt="Esterno dell'officina M2 Motors" class="rounded-image">
-                </div>
             </div>
         </section>
         
         <!-- Missione aziendale -->
-        <section class="container section-padding light-bg">
-            <div class="about-grid reversed">
-                <div class="about-image">
-                    <img src="../images/missone.jpg" alt="Il nostro team al lavoro" class="rounded-image">
-                </div>
-                <div class="about-text">
-                    <h2>La Nostra Missione</h2>
-                    <p>La nostra missione in M2 Motors è offrire servizi automobilistici eccezionali con integrità e professionalità. Ci impegniamo a costruire relazioni durature con i nostri clienti offrendo un servizio affidabile e onesto.</p>
-                    <p>Vogliamo essere riconosciuti non solo per la qualità delle nostre riparazioni, ma anche per il rapporto di fiducia che costruiamo con ogni cliente che entra nella nostra officina.</p>
-                    <p>Nell'officina M2 Motors trovate meccanici esperti con anni di esperienza nel settore, tecnici specializzati nei sistemi elettronici più moderni e personale attento alle esigenze di ogni cliente.</p>
+        <section class="light-bg section-padding">
+            <div class="container">
+                <div class="about-grid reversed">
+                    <div class="about-image">
+                        <img src="../images/missone.jpg" alt="Il nostro team al lavoro" class="rounded-image">
+                    </div>
+                    <div class="about-text">
+                        <h2>La Nostra Missione</h2>
+                        <p>La nostra missione in M2 Motors è offrire servizi automobilistici eccezionali con integrità e professionalità. Ci impegniamo a costruire relazioni durature con i nostri clienti offrendo un servizio affidabile e onesto.</p>
+                        <p>Vogliamo essere riconosciuti non solo per la qualità delle nostre riparazioni, ma anche per il rapporto di fiducia che costruiamo con ogni cliente che entra nella nostra officina.</p>
+                        <p>Nell'officina M2 Motors trovate meccanici esperti con anni di esperienza nel settore, tecnici specializzati nei sistemi elettronici più moderni e personale attento alle esigenze di ogni cliente.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -119,6 +95,14 @@
                         <h3>Innovazione</h3>
                         <p>Utilizzo di tecnologie all'avanguardia per diagnostiche precise.</p>
                     </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <img src="../images/clock.gif" alt="Puntualità e affidabilità" class="feature-gif">
+                        </div>
+                        <h3>Affidabilità</h3>
+                        <p>Rispetto degli impegni presi e puntualità nelle consegne.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -158,48 +142,13 @@
                 <div class="cta-box">
                     <h2>Pronto a Fare un'Esperienza Diversa?</h2>
                     <p>Scopri cosa può fare M2 Motors per la tua auto. Contattaci oggi stesso!</p>
-                    <a href="contact.html" class="cta-button primary">Prenota un Appuntamento</a>
+                    <a href="contact.php" class="cta-button primary">Prenota un Appuntamento</a>
                 </div>
             </div>
         </section>
     </main>
-    
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h4>M2 Motors</h4>
-                    <p>Il tuo partner di fiducia per riparazione e manutenzione automobilistica di Mattia Milan dal 2010.</p>
-                </div>
-                <div class="footer-column">
-                    <h4>Contatti</h4>
-                    <address>
-                        <p><i class="fas fa-map-marker-alt"></i> Via Villotta 17, 33083 Villotta di Chions (PN)</p>
-                        <p><i class="fas fa-phone"></i> 0434 630752</p>
-                        <p><i class="fas fa-envelope"></i> info@m2motors.it</p>
-                    </address>
-                </div>
-                <div class="footer-column">
-                    <h4>Orari</h4>
-                    <p>Lunedì-Venerdì: 8:30 - 12:30, 14:00 - 18:00</p>
-                    <p><i class="fas fa-phone"></i> <span class="phone-number" aria-label="phone number">0434 630752</span></p>
-                    <p>Domenica: Chiuso</p>
-                </div>
-                <div class="footer-column">
-                    <h4>Seguici</h4>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/m2motors_mattia" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/393471234567" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="wpg.html" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 M2 Motors di Mattia Milan - Villotta di Chions (PN). Tutti i diritti riservati.</p>
-            </div>
-        </div>
-    </footer>
-    
-    <script src="../js/main.js"></script>
-</body>
-</html>
+
+<?php
+// Includi footer
+include '../includes/footer.php';
+?>

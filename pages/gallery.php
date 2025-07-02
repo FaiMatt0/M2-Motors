@@ -1,44 +1,18 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Galleria foto dell'officina M2 Motors - Scopri i nostri spazi di lavoro e le attrezzature professionali">
-    <meta name="keywords" content="officina, galleria foto, M2 Motors, attrezzature, spazi lavoro">
-    <title>Galleria - M2 Motors</title>
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/mobile.css">
-    <link rel="stylesheet" href="../css/custom-colors.css">
-    <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <div class="fixed-logo-container">
-        <div class="fixed-logo"></div>
-    </div>
-    
-    <header>
-        <div class="container header-container">
-            <div class="logo desktop-only-logo">
-                <a href="../index.html">
-                    <img src="../images/logo.jpg" alt="Logo M2 Motors">
-                </a>
-            </div>
-            <nav class="main-nav">
-                <button class="mobile-menu-toggle" aria-label="Apri menu">
-                    <span class="hamburger"></span>
-                </button>
-                <ul class="nav-list">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="about.html">Chi Siamo</a></li>
-                    <li><a href="services.html">Servizi</a></li>
-                    <li><a href="gallery.html" class="active">Galleria</a></li>
-                    <li><a href="contact.html">Contatti</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<?php
+// Configurazione pagina
+$current_page = 'gallery';
+$base_path = '../';
+$page_title = 'Galleria - M2 Motors';
+$page_description = 'Galleria foto dell\'officina M2 Motors - Scopri i nostri spazi di lavoro e le attrezzature professionali';
+$page_keywords = 'officina, galleria foto, M2 Motors, attrezzature, spazi lavoro';
+$show_fixed_logo = true;
+
+// Script aggiuntivi
+$additional_scripts = '<script src="../js/gallery.js"></script>';
+
+// Includi header
+include '../includes/header.php';
+?>
 
     <main>
         <section class="page-header">
@@ -50,7 +24,7 @@
 
         <!-- Versione Desktop: Galleria con griglia, overlay e filtri -->
         <section class="container gallery-desktop">
-            <h2 class="section-title">La Nostra Officina</h2>
+            <h2 class="section-title">Le Nostre Aree di Lavoro</h2>
             <p class="gallery-intro">Scopri gli spazi professionali dove lavoriamo sui tuoi veicoli con attrezzature moderne e all'avanguardia</p>
             
             <!-- Filtri categoria -->
@@ -110,6 +84,54 @@
                         <p>Area dedicata alla lavorazione di componenti meccanici</p>
                     </div>
                 </div>
+                
+                <div class="gallery-item-full" data-category="workspace">
+                    <img src="../images/build.gif" alt="Area costruzione">
+                    <div class="gallery-overlay-full">
+                        <h3>Area Costruzione</h3>
+                        <p>Spazio per assemblaggio e montaggio componenti</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item-full" data-category="equipment">
+                    <img src="../images/chart.gif" alt="Monitoraggio prestazioni">
+                    <div class="gallery-overlay-full">
+                        <h3>Monitoraggio Prestazioni</h3>
+                        <p>Sistemi avanzati per il controllo qualità</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item-full" data-category="diagnostic">
+                    <img src="../images/check.gif" alt="Controllo qualità">
+                    <div class="gallery-overlay-full">
+                        <h3>Controllo Qualità</h3>
+                        <p>Verifiche finali per garantire la perfezione</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item-full" data-category="workspace">
+                    <img src="../images/clock.gif" alt="Gestione tempi">
+                    <div class="gallery-overlay-full">
+                        <h3>Efficienza e Puntualità</h3>
+                        <p>Organizzazione ottimale dei tempi di lavoro</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item-full" data-category="equipment">
+                    <img src="../images/trend-up.gif" alt="Crescita continua">
+                    <div class="gallery-overlay-full">
+                        <h3>Miglioramento Continuo</h3>
+                        <p>Sempre al passo con le nuove tecnologie</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item-full" data-category="workspace">
+                    <img src="../images/book.gif" alt="Formazione continua">
+                    <div class="gallery-overlay-full">
+                        <h3>Formazione Continua</h3>
+                        <p>Aggiornamento costante delle competenze tecniche</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -143,56 +165,36 @@
                     <div class="gallery-item-mobile" data-title="Meccanica di Precisione" data-description="Area dedicata alla lavorazione di componenti meccanici con strumenti di precisione per la massima qualità.">
                         <img src="../images/gear.gif" alt="Meccanica di precisione" class="gallery-image-mobile">
                     </div>
+                    
+                    <div class="gallery-item-mobile" data-title="Area Costruzione" data-description="Spazio specializzato per l'assemblaggio e il montaggio di componenti con procedure standardizzate.">
+                        <img src="../images/build.gif" alt="Area costruzione" class="gallery-image-mobile">
+                    </div>
+                    
+                    <div class="gallery-item-mobile" data-title="Monitoraggio Prestazioni" data-description="Sistemi avanzati per il controllo delle prestazioni e la verifica dei risultati ottenuti.">
+                        <img src="../images/chart.gif" alt="Monitoraggio prestazioni" class="gallery-image-mobile">
+                    </div>
+                    
+                    <div class="gallery-item-mobile" data-title="Controllo Qualità" data-description="Verifiche finali approfondite per garantire la perfezione di ogni intervento eseguito.">
+                        <img src="../images/check.gif" alt="Controllo qualità" class="gallery-image-mobile">
+                    </div>
+                    
+                    <div class="gallery-item-mobile" data-title="Efficienza e Puntualità" data-description="Organizzazione ottimale dei tempi di lavoro per rispettare sempre le scadenze concordate.">
+                        <img src="../images/clock.gif" alt="Gestione tempi" class="gallery-image-mobile">
+                    </div>
+                    
+                    <div class="gallery-item-mobile" data-title="Miglioramento Continuo" data-description="Sempre al passo con le nuove tecnologie e metodologie per offrire il miglior servizio possibile.">
+                        <img src="../images/trend-up.gif" alt="Crescita continua" class="gallery-image-mobile">
+                    </div>
+                    
+                    <div class="gallery-item-mobile" data-title="Formazione Continua" data-description="Aggiornamento costante delle competenze tecniche del nostro team per garantire il miglior servizio possibile.">
+                        <img src="../images/book.gif" alt="Formazione continua" class="gallery-image-mobile">
+                    </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="cta-section">
-            <div class="container">
-                <h2>Vieni a Trovarci</h2>
-                <p>Scopri di persona la qualità del nostro ambiente di lavoro</p>
-                <a href="contact.html" class="cta-button primary">Prenota un Appuntamento</a>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h4>M2 Motors</h4>
-                    <p>Il tuo partner di fiducia per riparazione e manutenzione automobilistica di Mattia Milan dal 2010.</p>
-                </div>
-                <div class="footer-column">
-                    <h4>Contatti</h4>
-                    <address>
-                        <p><i class="fas fa-map-marker-alt"></i> Via Villotta 17, 33083 Villotta di Chions (PN)</p>
-                        <p><i class="fas fa-phone"></i> <span class="phone-number" aria-label="phone number">0434 630752</span></p>
-                        <p><i class="fas fa-envelope"></i> info@m2motors.it</p>
-                    </address>
-                </div>
-                <div class="footer-column">
-                    <h4>Orari</h4>
-                    <p>Lunedì-Venerdì: 8:30 - 12:30, 14:00 - 18:00</p>
-                    <p>Sabato: 8:30 - 12:30</p>
-                    <p>Domenica: Chiuso</p>
-                </div>
-                <div class="footer-column">
-                    <h4>Seguici</h4>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/m2motors_mattia" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/393471234567" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="wpg.html" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 M2 Motors di Mattia Milan - Villotta di Chions (PN). Tutti i diritti riservati.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="../js/main.js"></script>
-    <script src="../js/gallery.js"></script>
-</body>
-</html>
+<?php
+// Includi footer
+include '../includes/footer.php';
+?>

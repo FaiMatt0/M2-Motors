@@ -1,46 +1,57 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="M2 Motors - Meccanici automobilistici professionisti che offrono servizi e riparazioni di qualità nella tua zona">
-    <meta name="keywords" content="automobilistico, meccanici, riparazione auto, manutenzione veicoli">
-    <meta name="format-detection" content="telephone=no">
-    <title>M2 Motors - Meccanici Automobilistici Professionisti</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/mobile.css">
-    <link rel="stylesheet" href="css/custom-colors.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <div class="fixed-logo-container">
-        <div class="fixed-logo"></div>
-    </div>
-    
-    <header>
-        <div class="container header-container">
-            <div class="logo desktop-only-logo">
-                <a href="index.html">
-                    <img src="images/logo.jpg" alt="Logo M2 Motors">
-                </a>
-            </div>
-            <nav class="main-nav">
-                <button class="mobile-menu-toggle" aria-label="Apri menu">
-                    <span class="hamburger"></span>
-                </button>
-                <ul class="nav-list">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="pages/about.html">Chi Siamo</a></li>
-                    <li><a href="pages/services.html">Servizi</a></li>
-                    <li><a href="pages/gallery.html">Galleria</a></li>
-                    <li><a href="pages/contact.html">Contatti</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    
+<?php
+// Configurazione pagina
+$current_page = 'home';
+$base_path = '';
+$page_title = 'M2 Motors - Meccanici Automobilistici Professionisti';
+$page_description = 'M2 Motors - Meccanici automobilistici professionisti che offrono servizi e riparazioni di qualità nella tua zona';
+$page_keywords = 'automobilistico, meccanici, riparazione auto, manutenzione veicoli';
+$show_fixed_logo = true;
+
+// Schema markup per JSON-LD
+$schema_markup = '
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "M2 Motors di Mattia Milan",
+  "image": "images/placeholders/logo.svg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Villotta 17",
+    "addressLocality": "Villotta di Chions",
+    "postalCode": "33083",
+    "addressRegion": "PN",
+    "addressCountry": "IT"
+  },
+  "telephone": "+390434630752",
+  "email": "info@m2motors.it",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:30",
+      "closes": "12:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "14:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "08:30",
+      "closes": "12:30"
+    }
+  ]
+}
+</script>';
+
+// Includi header
+include 'includes/header.php';
+?>
+
     <main>
         <div class="logo-bg-wrapper">
             <section class="hero">
@@ -49,8 +60,8 @@
                         <h1>Riparazione e Manutenzione Auto da Esperti</h1>
                         <p class="hero-subtitle">Il tuo partner di fiducia per servizi automobilistici professionali</p>
                         <div class="hero-buttons">
-                            <a href="pages/services.html" class="cta-button primary">I Nostri Servizi</a>
-                            <a href="pages/contact.html" class="cta-button secondary">Prenota Appuntamento</a>
+                            <a href="pages/services.php" class="cta-button primary">I Nostri Servizi</a>
+                            <a href="pages/contact.php" class="cta-button secondary">Prenota Appuntamento</a>
                         </div>
                     </div>
                 </div>
@@ -107,11 +118,12 @@
                     </div>
                 </div>
                 <div class="text-center">
-                    <a href="pages/services.html" class="cta-button">Vedi Tutti i Servizi</a>
+                    <a href="pages/services.php" class="cta-button primary">Vedi Tutti i Servizi</a>
                 </div>
             </div>
         </section>
 
+        <div class="logo-bg-wrapper">
         <!-- Gallery Section -->
         <section id="gallery" class="gallery">
             <div class="container">
@@ -146,9 +158,27 @@
                             <p>Spazio dedicato alle riparazioni</p>
                         </div>
                     </div>
+                    <div class="gallery-item">
+                        <img src="images/gear.gif" alt="Meccanica di precisione">
+                        <div class="gallery-overlay">
+                            <h4>Meccanica di Precisione</h4>
+                            <p>Lavorazioni specializzate</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/build.gif" alt="Costruzione e montaggio">
+                        <div class="gallery-overlay">
+                            <h4>Montaggio Componenti</h4>
+                            <p>Assemblaggio professionale</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="pages/gallery.php" class="cta-button primary">Vedi tutte le foto</a>
                 </div>
             </div>
         </section>
+        </div>
 
         <!-- Oil Types Section -->
         <section class="oil-types">
@@ -158,8 +188,8 @@
                 <div class="oil-brands">
                     <div class="oil-brand">
                         <div class="oil-brand-header">
-                            <img src="https://www.ravenol.de/media/image/product/28734/md/ravenol_vsi_sae_5w-40_4_liter.jpg" alt="Ravenol Oil">
-                            <h3>Ravenol</h3>
+                            <img src="images/revenol.png" alt="Revenol Oil">
+                            <h3>Revenol</h3>
                         </div>
                         <div class="oil-description">
                             <p>Oli motore sintetici tedeschi di alta qualità, specificamente formulati per prestazioni superiori e protezione motore.</p>
@@ -172,7 +202,7 @@
                     </div>
                     <div class="oil-brand">
                         <div class="oil-brand-header">
-                            <img src="https://www.valvoline.com/content/dam/valvoline/us/products/motor-oil/maxlife/5w30/5w30-5qt.png" alt="Valvoline Oil">
+                            <img src="images/valvoline.png" alt="Valvoline Oil">
                             <h3>Valvoline</h3>
                         </div>
                         <div class="oil-description">
@@ -186,7 +216,7 @@
                     </div>
                     <div class="oil-brand">
                         <div class="oil-brand-header">
-                            <img src="https://www.shell.com/content/dam/shell/images/news/2021/shell-helix-ultra-professional-af-5w-30-bottle.png" alt="Shell Oil">
+                            <img src="images/shell.png" alt="Shell Oil">
                             <h3>Shell Helix</h3>
                         </div>
                         <div class="oil-description">
@@ -202,16 +232,17 @@
             </div>
         </section>
 
+        <div class="logo-bg-wrapper">
         <!-- Partners Section -->
         <section class="partners">
             <div class="container">
-                <h2 class="section-title">I Nostri Partner Commerciali</h2>
-                <p class="section-subtitle">Collaboriamo con i migliori fornitori per garantire ricambi di qualità</p>
+                <h2 class="section-title">I Nostri Partner</h2>
+                <p class="section-subtitle">Collaboriamo con aziende di fiducia per offrire servizi e prodotti di eccellenza</p>
                 <div class="partners-grid">
                     <div class="partner-card">
-                        <a href="https://www.rhiag.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.aposto.it/officina/m2-motors-di-mattia-milan/" target="_blank" rel="noopener noreferrer">
                             <div class="partner-logo">
-                                <img src="https://www.rhiag.com/themes/rhiag/assets/img/logo.svg" alt="Rhiag Group">
+                                <img src="images/rhiag.jpg" alt="Rhiag Group">
                             </div>
                             <div class="partner-info">
                                 <h3>Rhiag Group</h3>
@@ -221,102 +252,93 @@
                         </a>
                     </div>
                 </div>
+                <div class="partners-grid">
+                    <div class="partner-card">
+                        <a href="https://www.santanderbank.com/" target="_blank" rel="noopener noreferrer">
+                            <div class="partner-logo">
+                                <img src="images/santander.png" alt="Santander Bank">
+                            </div>
+                            <div class="partner-info">
+                                <h3>Santander Bank</h3>
+                                <p>Partner finanziario di fiducia per soluzioni di pagamento e finanziamenti dedicati ai servizi automobilistici.</p>
+                                <span class="partner-link">Visita il sito <i class="fas fa-external-link-alt"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
+        </div>
 
         <section class="testimonials">
             <div class="container">
                 <h2 class="section-title">Cosa Dicono i Nostri Clienti</h2>
-                <div class="testimonials-slider">
-                    <div class="testimonial">
-                        <div class="stars">★★★★★</div>
-                        <blockquote>"Servizio eccezionale! Hanno riparato la mia auto velocemente e a un prezzo ragionevole."</blockquote>
-                        <cite>- Marco D.</cite>
+                <div class="testimonials-container">
+                    <div class="testimonials-slider">
+                        <div class="testimonials-track" id="testimonialsTrack">
+                            <div class="testimonial">
+                                <div class="stars">★★★★★</div>
+                                <blockquote>"I had to interrupt my trip due to a minor technical issue and I got here a quick and correct repair. Guys, thanks for your cooperation. Warm regards from Hungary"</blockquote>
+                                <cite>- Csaba Pintér</cite>
+                            </div>
+                            <div class="testimonial">
+                                <div class="stars">★★★★★</div>
+                                <blockquote>"Professionisti del settore anche se pieni di lavoro disponibili e sempre pronti a soddisfare le richieste del cliente"</blockquote>
+                                <cite>- Davide Caldon</cite>
+                            </div>
+                            <div class="testimonial">
+                                <div class="stars">★★★★★</div>
+                                <blockquote>"Il titolare ed il meccanico in officina sono molto giovani, ma non abbiate pregiudizi! Sono persone preparate e competenti. Sanno trovare anche soluzioni ad-hoc per risolvere problemi di cui molte altre officine non sono venute a capo."</blockquote>
+                                <cite>- Amedeo Battiston</cite>
+                            </div>
+                            <div class="testimonial">
+                                <div class="stars">★★★★☆</div>
+                                <blockquote>"Servizio, professionalitá e cortesia. Serietá e passione. Il migliore in zona."</blockquote>
+                                <cite>- Daniele Iseppi</cite>
+                            </div>
+                            <div class="testimonial">
+                                <div class="stars">★★★★★</div>
+                                <blockquote>"Bravissimo, Serietà è prezzi molto buoni ho ritirato la mia PANDA 1300 MULTI JET DEL 2015 È RITORNATA COME NUOVA, BRAVO MATTIA SEI UN GRANDE PERSONA"</blockquote>
+                                <cite>- Salvatore Iannarino</cite>
+                            </div>
+                            <div class="testimonial">
+                                <div class="stars">★★★★★</div>
+                                <blockquote>"Ottimo servizio personale gentile e competente nel proprio lavoro"</blockquote>
+                                <cite>- Claudio Innocente</cite>
+                            </div>
+                            <div class="testimonial">
+                                <div class="stars">★★★★★</div>
+                                <blockquote>"Giovane intraprendente, bravo, capace e corretto."</blockquote>
+                                <cite>- Pieraldo Gennari</cite>
+                            </div>
+                        </div>
                     </div>
-                    <div class="testimonial">
-                        <div class="stars">★★★★★</div>
-                        <blockquote>"I migliori meccanici in città. Sono onesti, affidabili e fanno un ottimo lavoro."</blockquote>
-                        <cite>- Laura P.</cite>
+                    <div class="testimonials-controls">
+                        <button class="testimonial-nav" id="prevTestimonial" aria-label="Testimonianza precedente">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="testimonials-dots" id="testimonialsDots">
+                            <span class="dot active" data-slide="0"></span>
+                            <span class="dot" data-slide="1"></span>
+                            <span class="dot" data-slide="2"></span>
+                            <span class="dot" data-slide="3"></span>
+                            <span class="dot" data-slide="4"></span>
+                            <span class="dot" data-slide="5"></span>
+                            <span class="dot" data-slide="6"></span>
+                        </div>
+                        <button class="testimonial-nav" id="nextTestimonial" aria-label="Testimonianza successiva">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h4>M2 Motors</h4>
-                    <p>Il tuo partner di fiducia per riparazione e manutenzione automobilistica di Mattia Milan dal 2010.</p>
-                </div>
-                <div class="footer-column">
-                    <h4>Contatti</h4>
-                    <address>
-                        <p><i class="fas fa-map-marker-alt"></i> Via Villotta 17, 33083 Villotta di Chions (PN)</p>
-                        <p><i class="fas fa-phone"></i> <span class="phone-number" aria-label="phone number">0434 630752</span></p>
-                        <p><i class="fas fa-envelope"></i> info@m2motors.it</p>
-                    </address>
-                </div>
-                <div class="footer-column">
-                    <h4>Orari</h4>
-                    <p>Lunedì-Venerdì: 8:30 - 12:30, 14:00 - 18:00</p>
-                    <p>Sabato: 8:30 - 12:30</p>
-                    <p>Domenica: Chiuso</p>
-                </div>
-                <div class="footer-column">
-                    <h4>Seguici</h4>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/m2motors_mattia" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/393471234567" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="pages/wpg.html" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 M2 Motors di Mattia Milan - Villotta di Chions (PN). Tutti i diritti riservati.</p>
-            </div>
-        </div>
-    </footer>
-
     <script src="js/main.js"></script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "AutoRepair",
-      "name": "M2 Motors di Mattia Milan",
-      "image": "images/placeholders/logo.svg",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Via Villotta 17",
-        "addressLocality": "Villotta di Chions",
-        "postalCode": "33083",
-        "addressRegion": "PN",
-        "addressCountry": "IT"
-      },
-      "telephone": "+390434630752",
-      "email": "info@m2motors.it",
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "08:30",
-          "closes": "12:30"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "14:00",
-          "closes": "18:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Saturday",
-          "opens": "08:30",
-          "closes": "12:30"
-        }
-      ]
-    }
-    </script>
-</body>
-</html>
+    <script src="js/testimonials.js"></script>
+
+<?php
+// Includi footer
+include 'includes/footer.php';
+?>

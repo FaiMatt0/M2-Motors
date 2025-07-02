@@ -86,8 +86,8 @@ input:focus, textarea:focus, select:focus {
 
 /* Bottone speciale */
 .btn-special {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-  color: var(--white);
+  background: #dc3545 !important;
+  color: var(--white) !important;
   border: none;
   padding: 1rem 2rem;
   border-radius: var(--radius);
@@ -96,6 +96,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .btn-special:hover {
+  background: #c82333 !important;
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }

@@ -1,0 +1,21 @@
+# Reindirizzamenti da file HTML a PHP
+RewriteEngine On
+
+# Reindirizzamento da index.html a index.php
+RewriteRule ^index\.html$ index.php [R=301,L]
+
+# Reindirizzamenti per le pagine nella cartella pages
+RewriteRule ^pages/about\.html$ pages/about.php [R=301,L]
+RewriteRule ^pages/services\.html$ pages/services.php [R=301,L]
+RewriteRule ^pages/gallery\.html$ pages/gallery.php [R=301,L]
+RewriteRule ^pages/contact\.html$ pages/contact.php [R=301,L]
+RewriteRule ^pages/wpg\.html$ pages/wpg.php [R=301,L]
+
+# Opzionale: nascondere l'estensione .php dalle URL
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# Opzionale: rimuovere l'estensione .php se presente nell'URL
+RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
+RewriteRule ^ /%1 [NC,L,R=301]
